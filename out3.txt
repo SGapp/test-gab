@@ -1,15 +1,16 @@
-                S.A.S. ENERGIES RENOUVELABLES CITOYENNES ET                                         SOLIDAIRES (ERCISOL)                                  Société par Actions Simplifiée au capital variable                                Siège social : 12 C rue des Vosges – 90150 FOUSSEMAGNE                                               (Révision 2 du 22 juin 2013)                                                        STATUTS                                                       Préambule
+                S.A.S. ENERGIES RENOUVELABLES CITOYENNES ET                                         SOLIDAIRES (ERCISOL)                                  Société par Actions Simplifiée au capital variable                                Siège social :2 C rue des Vosges – 90150 FOUSSEMAGNE                                               (Révision 2 du 22 juin 2013)                                                        STATUTS                                                       Préambule
 En tenant compte des objectifs du Grenelle de l’environnement et étant conscient que les ressources fossiles (pétrole, gaz, uranium) ne sont pas inépuisables, que leurs coûts sont largement tributaires d’un contexte politique et financier mondial incontrôlable, que l’électricité est appelé à augmenter et que les dégradations écologiques et climatiques dues à l’effet de serre sont déjà constatées par les experts, nous envisageons la création d’une entreprise de production et de distribution d’énergies d’origine renouvelable dans les buts de :
 - participer à la lutte contre le réchauffement climatique, - créer directement ou indirectement des emplois locaux non délocalisables, - promouvoir les économies d’énergie et les énergies renouvelables, - ne pas réaliser d’unités de production sur des terrains utilisés en agriculture ou en élevage pour ne pas entrer en concurrence avec les ressources alimentaires, - faire participer le maximum de personnes à la gestion d’une entreprise grâce une gouvernance démocratique, solidaire et citoyenne, - proposer à ses actionnaires une alternative aux placements financiers traditionnels, avec un objectif de long terme, en participant à l’indépendance énergétique de la France.
 Le présent préambule fait partie intégrante des statuts. En cas de différent sur l’interprétation des clauses statutaires, la volonté commune des parties, telle qu’elle y est indiquée sur le fond, doit prévaloir à leur interprétation.
-Pour exercer en commun leur objectif, les personnes physiques et morales figurant sur la liste ci-annexée (annexe 1) et celles qui deviendront par la suite actionnaires, ont établi ainsi qu’il suit les statuts de la société par actions simplifiée qu’ils ont convenu de constituer entre eux.
+Pour exercer en commun leur objectif, les personnes physiques et morales figurant sur la liste ci-annexée (annexe) et celles qui deviendront par la suite actionnaires, ont établi ainsi qu’il suit les statuts de la société par actions simplifiée qu’ils ont convenu de constituer entre eux.
                                                         TITRE I                                   FORME – OBJET – DENOMINATION – SIEGE – DUREE
-ARTICLE 1. Forme
+ARTICLE. Forme
 Il est formé par les présentes entre les titulaires des actions ci-après créées et de celles qui pourraient l’être ultérieurement, une société par actions simplifiée à capital variable. Elle sera régie par les présents statuts.
 ARTICLE 2. Objet
 La société a pour objet, tant en France qu’à l’étranger :
 - la création, l’acquisition, la location, la prise à bail, l’installation, l’exploitation de tous établissements et équipements destinés à la production et à la distribution de toutes énergies dont la source est d’origine renouvelable, - la vente de l’énergie produite, - la promotion des énergies renouvelables et des économies d’énergie, - toutes actions de promotion et de recherche liées aux énergies renouvelables, - la prise, l’acquisition, l’exploitation ou la cession de tous procédés et brevets concernant ces activités, - la participation directe ou indirecte de la société dans toutes opérations financières, immobilières ou mobilières et dans toutes entreprises commerciales ou industrielles pouvant se rattacher à l’objet social ou à tout objet similaire ou connexe, de nature à favoriser son extension ou son développement.
-                                                           1\nARTICLE 3. Dénomination
+                                                          
+ARTICLE 3. Dénomination
 La dénomination sociale est ENERGIES RENOUVELABLES CITOYENNES ET SOLIDAIRES.
 Son nom commercial est ERCISOL.
 Tous actes et documents émanant de la société et destinés aux tiers, notamment les lettres, factures, annonces et publications diverses, doivent indiquer la dénomination sociale, précédée ou suivie immédiatement et lisiblement des mots « Société par actions simplifiée » ou des initiales « SAS » et de l’énonciation du montant du capital social.
@@ -24,7 +25,7 @@ A la création de la société, les actionnaires ont apporté la somme de 65 500
 Ces apports en espèces, déposés sur un compte ouvert au nom de la société en formation auprès de la banque : CREDIT
 MUTUEL, 1 rue de Belfort – 68210 MONTREUX-VIEUX.
 Ils ont été retirés par le Président sur présentation du certificat du greffe du tribunal de commerce attestant l’immatriculation de la société au Registre du Commerce et des Sociétés.
-Aux termes de l’Assemblée Générale en date du 22 Juin 2013, le capital social a été porté à la somme de 398 000 € par apport en numéraire.
+Aux termes de l’Assemblée Générale en date du2 Juin013, le capital social a été porté à la somme de 398 000 € par apport en numéraire.
 Apport en nature : Les propriétaires d’équipements, de surfaces exploitables peuvent opter pour obtenir des actions en échange de ses apports. Ces conditions sont fixées dans le(s) bail(aux) qui lie la société au propriétaire.
 ARTICLE 7. Capital social
 A ce jour, le capital social est fixé à 398 000 €. Il est divisé en 796 actions de 500 € entièrement souscrites et libérées.
@@ -33,7 +34,7 @@ ARTICLE 8 .Modifications du capital
 Le capital maximum ou minimum ne peut être augmenté ou réduit que par une Assemblée Générale Extraordinaire.
 Le capital social peut être augmenté soit par émission d'actions, soit par majoration du montant nominal de l’action.
 Les actions nouvelles sont émises soit à leur montant nominal, soit à ce montant majoré d'une prime d'émission. Cette prime sera définie chaque année par le Comité de Gestion et ratifiée par l’Assemblée Générale.
-Elles sont libérées soit par apport en numéraire, soit par apport en nature, soit par incorporation de réserves, bénéfices ou                                                            2\nprimes d'émission, soit en conséquence d'une fusion ou d'une scission.
+Elles sont libérées soit par apport en numéraire, soit par apport en nature, soit par incorporation de réserves, bénéfices ou                                                            primes d'émission, soit en conséquence d'une fusion ou d'une scission.
 Les actions nouvelles de numéraire doivent obligatoirement être libérées lors de la souscription de la quotité du nominal et, le cas échéant, de la totalité de la prime d'émission.
 ARTICLE 9. Forme des actions
 Les actions sont nominatives et indivisibles à l’égard de la société. Elles seront totalement libérées à la souscription.
@@ -53,7 +54,7 @@ Conditions de fonctionnement d’un compte courant associé :
 - Les dépôts et retraits devront être validés par le Comité de Gestion en fonction des besoins de la société. Une convention sera signée pour définir la durée du dépôt, sa rémunération et les conditions de retrait.
 - La demande de retrait d’argent du compte courant associé doit être formulée par écrit au moins trois mois avant la date souhaitée.
 - Le retrait d’un compte courant associé, même partiel, ne doit pas mettre en danger la société (les difficultés financières de la société peuvent justifier l'impossibilité pour l’actionnaire de réclamer un remboursement impromptu (sinon défaut d’affectio societatis)).
-                                                              3\n                                                         TITRE III                                             VARIATION DU CAPITAL SOCIAL                                                SITUATION DES ASSOCIES
+                                                                                                                       TITRE III                                             VARIATION DU CAPITAL SOCIAL                                                SITUATION DES ASSOCIES
 ARTICLE 12. Augmentation du capital – Admission de nouveaux actionnaires
 Le capital social est susceptible d’augmentation au moyen de l’admission de nouveaux actionnaires ou de la souscription d’actions nouvelles par les actionnaires et de diminution par la reprise totale ou partielle des apports effectués par les actionnaires.
 Le capital est variable dans les limites du capital autorisé, fixées ainsi qu’il suit :
@@ -73,7 +74,8 @@ Les apports en nature ne pourront faire l’objet que d’un remboursement en es
 Aucune reprise d’apport ne pourra toutefois avoir pour effet de réduire le capital social à une somme inférieure au seuil fixé ci-dessus.
 ARTICLE 14. Décès – Interdiction – Redressement et liquidation judiciaire d’un actionnaire
 La société ne sera dissoute ni par le décès d’un actionnaire ni lorsqu’un jugement de liquidation judiciaire, l’interdiction de diriger, gérer, administrer ou contrôler une ou plusieurs entreprises commerciales ou une ou plusieurs personnes morales, ou une mesure d’incapacité est prononcé à l’égard d’un actionnaire.
-                                                             4\nARTICLE 15. Retrait d’un actionnaire
+                                                            
+ARTICLE 15. Retrait d’un actionnaire
 Conditions de retrait :
 A partir de trois (3) années de détention de ses actions et sauf application des dispositions concernant le capital social minimum, tout actionnaire pourra se retirer de la société à la date de clôture de chaque exercice. Les montants annuels des retraits cumulés ne doivent pas dépasser 10% du capital souscrit de la société à la fin de l’exercice.
 Les demandes de remboursement sur un exercice seront traitées par ordre d’arrivée jusqu’à concurrence des 10% du capital maximum. Les reliquats de demandes de retrait seront, le cas échéant, reportés sur l’exercice suivant et ainsi de suite jusqu’au solde.
@@ -100,7 +102,8 @@ Inversement, elle est augmentée de sa quote-part dans les réserves excédant l
 Pour ce calcul, il est tenu compte, en cas de retrait, du bilan arrêté à la fin de l’exercice de la demande du retrait et pour les autres cas, du dernier bilan arrêté avant l’exclusion ou la radiation, à moins que le Comité de Gestion ne préfère établir une situation à la date de prise d’effet de l’exclusion ou de la radiation.
 Dans tous les cas, le bilan servant au calcul des droits de l’actionnaire sortant sera établi sur la base des valeurs réelles des actifs et des passifs, arrêtées soit d’un commun accord, soit par expertise, dans les conditions prévues à l’article 1843-4 du
 Code civil.
-                                                              5\nLe remboursement des sommes dues à l’actionnaire qui se retire, dans les conditions ci-dessus, ou à ses ayants droit, doit intervenir dans le mois qui suit la décision.
+                                                             
+Le remboursement des sommes dues à l’actionnaire qui se retire, dans les conditions ci-dessus, ou à ses ayants droit, doit intervenir dans le mois qui suit la décision.
 ARTICLE 19. Inaliénabilité des actions
 Pendant une durée de trois (3) ans à compter de la date des souscriptions des actions, les actionnaires ne pourront céder leurs actions, ainsi que les droits afférents.
 Par exception à l’inaliénabilité ci-dessus, le Comité de Gestion doit lever l’interdiction de cession des actions en cas d’exclusion d'un actionnaire.
@@ -120,7 +123,8 @@ ARTICLE 21. Gouvernance
 La société est gérée et administrée par un Président élu par les actionnaires lors de l’Assemblée Générale Ordinaire des actionnaires.
 Le Président est assisté par un Comité de Gestion dont les membres sont élus par l’Assemblée Générale Ordinaire des actionnaires
 D’autre part, la gouvernance est contrôlée par tous les actionnaires au travers des différentes Assemblées Générales.
-                                                             6\nARTICLE 22. Président
+                                                            
+ARTICLE 22. Président
 L’élection du Président a lieu à main levée, sauf si deux membres au moins de l’Assemblée demandent un vote à bulletin secret.
 Le Président est membre d’office du Comité de Gestion.
 Le Président représente la société à l’égard des tiers. Il est investi des pouvoirs pour agir en toute circonstance au nom de la société dans la limite de l’objet social, sous réserve des pouvoirs conférés par le Comité de Gestion et par l’Assemblée des actionnaires, par la loi et les présents statuts.
@@ -142,7 +146,8 @@ Le Comité de Gestion se réunit chaque fois que l’intérêt de la société l
 Pour pouvoir délibérer, la moitié au moins de ses membres doit être présents. A défaut de quorum, une 2° séance du
 Comité de Gestion sera convoquée dans les 8 jours avec le même ordre du jour et pourra délibérer valablement quelque soit le nombre de membres présents.
 Les délibérations sont prises à la majorité des voix, sachant que les membres du Comité de Gestion présents ne peuvent avoir qu’un seul pouvoir.
-                                                             7\nEn cas d’égalité des voix, la voix du Président est prépondérante.
+                                                            
+En cas d’égalité des voix, la voix du Président est prépondérante.
 Les délibérations du Comité de Gestion sont actées dans un registre et signées par les membres présents.
 ARTICLE 25. Pouvoirs du Comité de Gestion
 Le Comité de gestion :
@@ -163,7 +168,8 @@ Les actionnaires sont convoqués, pour toute assemblée ou consultation par corr
 L’ordre du jour, le texte des résolutions et les documents nécessaires à l’information des actionnaires sont communiqués à chacun d’eux, au moins 15 jours avant l’assemblée ou la consultation.
 Ordre du jour :
 L’ordre du jour est arrêté par le Comité de Gestion. Sur propositions d’au moins 5% des actionnaires, des points supplémentaires peuvent être apportés à l’ordre du jour. Elles doivent être communiquées au Comité de Gestion dans un délai minimum d’une semaine avant la date de l’Assemblée Générale.
-                                                            8\nPrésidence :
+                                                           
+Présidence :
 L’Assemblée est présidée par le Président ou en son absence par un autre membre du Comité de Gestion.
 Feuille de présence :
 Il est tenu une feuille de présence comportant les noms, prénoms, adresses courriels ou postales des actionnaires présents, représentés ou votants par correspondance, ainsi que le nombre d’actions détenues par chacun d’eux. Elle est signée par tous les actionnaires présents, tant pour eux-mêmes que pour ceux qu’ils représentent. Pour les actionnaires votant par courrier électronique ou postal, la mention de « votant par correspondance » est mentionnée en face de leurs noms par le secrétaire de l’Assemblée.
@@ -189,7 +195,7 @@ Majorité :
 Les délibérations de l’Assemblée Générale Ordinaire sont prises à la majorité simple.
 Pouvoirs :
 L’Assemblée Générale Ordinaire annuelle :
-            . fixe les orientations générales de la société,                                                               9\n            . élit les membres du Comité de Gestion, peut les révoquer et contrôle leur gestion,             . désigne les commissaires aux comptes s’il y a lieu,             . approuve ou redresse les comptes,             . prend position sur l’affectation des résultats proposée par le Comité de Gestion, en particulier fixe le montant             des dividendes à verser, le financement de projets en cohérence avec les objectifs de la société,             . ratifie le montant de la prime d'émission des actions souscrites après l'Assemblée Générale,             . prend connaissance des cessions ou achats des actions,             . donne au Comité de Gestion les autorisations nécessaires au cas où les pouvoirs de celui-ci seraient             insuffisants,             . décide de la suite à donner aux projets présentés par le Comité de Gestion,             . décide de la création de filiales d’ERCISOL, approuve les statuts des filiales et modifications,             . décide de prise de participation dans une société,             . peut exclure un actionnaire qui aurait causé un préjudice matériel ou moral à la société.
+            . fixe les orientations générales de la société,                                                                           . élit les membres du Comité de Gestion, peut les révoquer et contrôle leur gestion,             . désigne les commissaires aux comptes s’il y a lieu,             . approuve ou redresse les comptes,             . prend position sur l’affectation des résultats proposée par le Comité de Gestion, en particulier fixe le montant             des dividendes à verser, le financement de projets en cohérence avec les objectifs de la société,             . ratifie le montant de la prime d'émission des actions souscrites après l'Assemblée Générale,             . prend connaissance des cessions ou achats des actions,             . donne au Comité de Gestion les autorisations nécessaires au cas où les pouvoirs de celui-ci seraient             insuffisants,             . décide de la suite à donner aux projets présentés par le Comité de Gestion,             . décide de la création de filiales d’ERCISOL, approuve les statuts des filiales et modifications,             . décide de prise de participation dans une société,             . peut exclure un actionnaire qui aurait causé un préjudice matériel ou moral à la société.
 ARTICLE 30. Assemblée Générale Ordinaire réunie extraordinairement
 L’Assemblée Générale Ordinaire réunie extraordinairement examine les questions dont la solution ne peut attendre la prochaine Assemblée Générale annuelle.
 Elle est convoquée par le Président. L’ordre du jour est défini par le Comité de Gestion.
@@ -204,9 +210,9 @@ Les délibérations de l’Assemblée Générale Extraordinaire sont prises à l
 Pouvoirs :
 L’Assemblée Générale Extraordinaire peut :
             . modifier les statuts de la société et en particulier lors du changement du capital maximum et minimum de la             société,             . transformer la SAS, décider de sa dissolution ou de sa prorogation,             . prendre des décisions d’incorporation d’une partie des réserves au capital social.
-                                                             10\n                                                         TITRE VI                                     EXERCICE SOCIAL – COMPTES – DIVIDENDES -
+                                                                                                                       TITRE VI                                     EXERCICE SOCIAL – COMPTES – DIVIDENDES -
 ARTICLE 32. Exercice social
-L’exercice social commence le 1° janvier et se termine le 31 décembre de chaque année. Par exception, le premier exercice social comprendra la période courue entre le jour de l’immatriculation au registre du commerce et des sociétés et le 31 décembre 2011.
+L’exercice social commence le 1° janvier et se termine le 31 décembre de chaque année. Par exception, le premier exercice social comprendra la période courue entre le jour de l’immatriculation au registre du commerce et des sociétés et le 31 décembre 20.
 ARTICLE 33. Inventaire, approbation des comptes annuels, affectation des résultats, dividendes, commissaires aux comptes
 Il est tenu une comptabilité régulière des opérations, conformément à la loi. A la clôture de chaque exercice, le Comité de
 Gestion dresse l’inventaire des différents éléments de l’actif et du passif. Il présente les comptes annuels de l’exercice lors de l’Assemblée Générale annuelle convoquée avant le 30 juin de l’année qui suit la clôture des comptes et soumet l’approbation des comptes de l’exercice aux actionnaires.
@@ -224,7 +230,7 @@ Si la société n’atteint pas deux des trois seuils fixés par le nouvel artic
 234 du 25 février 2009), elle n’est pas tenue de désigner un commissaire aux comptes. Cependant, l’Assemblée des actionnaires à la possibilité, à tout moment, de désigner en son sein, pour une durée de deux ans renouvelables, deux membres actionnaires qui seront chargés de la vérification des comptes de la société.
 En application des dispositions de l’article L.227-10 du Code du Commerce, ils présentent aux actionnaires, statuant sur les comptes de l’exercice, un rapport sur les conventions intervenues entre la société et son Président et/ou les membres du
 Comité de Gestion.
-                                                            11\n                                                        TITRE VII                                   DISSOLUTION – LIQUIDATION - CONTESTATIONS
+                                                                                                                     TITRE VII                                   DISSOLUTION – LIQUIDATION - CONTESTATIONS
 ARTICLE 34. Dissolution et liquidation
 La société est dissoute par l’arrivée de son terme, sauf prorogation, par l’extinction totale de son objet, par l’effet d’un jugement ordonnant la liquidation judiciaire ou la cession totale des actifs, par décision judiciaire pour juste motif.
 La dissolution anticipée peut aussi résulter d’une décision collective des actionnaires lors d’une Assemblée Générale
@@ -245,11 +251,12 @@ Belfort, mandat exprès est donné au Président, cofondateur, ou à tout mandat
 Conformément aux articles L. 210-6 et R. 210-6 du Code de commerce sur les sociétés commerciales, l’immatriculation de la société au RCS de Belfort emportera reprise de ces engagements par la société.
 ARTICLE 37. Frais
 Les frais, droits et honoraires des présents statuts, et ceux qui en seront la suite ou la conséquence, sont à la charge de la société.
-                                                            12\nARTICLE 38. Publicité
+                                                            
+ARTICLE 38. Publicité
 Tous pouvoirs sont donnés au Président, ou à toute personne qu’il déciderait de se substituer, à l’effet d’accomplir toutes les formalités prescrites par la loi en vue de l’immatriculation de la société au registre du commerce et des sociétés, et notamment à l’effet d’insérer l’avis de constitution dans un journal habilité à publier les annonces légales dans le département du siège social.
 ARTICLE 39. Approbation des statuts
 Les personnes physiques et morales dont les noms, prénoms, nationalité, domicile, dénomination, siège social, figurant en annexe, déclarent avoir pris connaissance des présents statuts et les approuvent sans réserve. Elles donnent pouvoir au
 Président élu par l’Assemblée Générale pour signer en leur lieu et place les présents statuts.
-Révisé lors de l’Assemblée Générale Extraordinaire du 22 juin 2013 à Foussemagne,
+Révisé lors de l’Assemblée Générale Extraordinaire du 22 juin 20 à Foussemagne,
 Le Président,
-Louis MASSIAS                                                           13
+Louis MASSIAS                                                           

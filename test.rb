@@ -17,7 +17,12 @@ pages = reader.pages.map do |page|
    page.text
 end
 
-content = pages.join('\n')
+pages = pages.each do |page|
+  last_two = page.split(//).last(2).join('')
+  page.gsub!(/#{last_two}/, '') if last_two =~ /^[ |\d]+$/
+end
+
+content = pages.join("\n")
 
 content = content.gsub!(/[\n]+/, "\n")
 
@@ -29,11 +34,13 @@ content = content.gsub!(/(?<=[^\.:!?-])([\n]+)(?=([^A-Z\d]))/m, " ")
 
 File.open("out3.txt", 'w') {|f| f.write("#{content}") }
 
-puts File.read("out3.txt").scan(/ARTICLE\s+[\d]+/)
+# puts File.read("out3.txt").scan(/ARTICLE\s+[\d]+/)
 
-puts File.read("out3.txt").scan(/ARTICLE\s[\d]+\.+[^\n]+/)
+# puts File.read("out3.txt").scan(/ARTICLE\s[\d]+\.+[^\n]+/)
 
-puts File.read("out3.txt").scan(/ARTICLE(.|\n)+(?=ARTICLE)/)
+File.read("out3.txt").scan(/(^ARTICLE.*?(?=ARTICLE|TITRE|\z))/m)
+
+puts File.read("out3.txt")[/(^.*?(?=société|Société))/m].strip.gsub(/\s{2}+/, "")
 
 
 # puts File.read("out.txt").match(/^ARTICLEGKJBKJBV/)
