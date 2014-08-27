@@ -34,13 +34,41 @@ content = content.gsub!(/(?<=[^\.:!?-])([\n]+)(?=([^A-Z\d]))/m, " ")
 
 File.open("out3.txt", 'w') {|f| f.write("#{content}") }
 
-# puts File.read("out3.txt").scan(/ARTICLE\s+[\d]+/)
+articles_number = content.scan(/ARTICLE\s+[\d]+/)
 
-# puts File.read("out3.txt").scan(/ARTICLE\s[\d]+\.+[^\n]+/)
+article_title = content.scan(/ARTICLE\s[\d]+\.+[^\n]+/)
 
-File.read("out3.txt").scan(/(^ARTICLE.*?(?=ARTICLE|TITRE|\z))/m)
+articles_content = content.scan(/(^ARTICLE.*?(?=ARTICLE|TITRE|\z))/m)
 
-puts File.read("out3.txt")[/(^.*?(?=société|Société))/m].strip.gsub(/\s{2}+/, "")
+company_name = content[/(^.*?(?=société|Société))/m].strip.gsub(/\s{2}+/, "")
+
+company_name_article = []
+articles_content.flatten.each do |article|
+  company_name_article << article if article.include?("dénomination sociale") || article.include?("DENOMINATION")
+end
+
+company_head_office = []
+articles_content.flatten.each do |article|
+  company_head_office << article if article.include?("siège social est")
+end
+
+company_share_capital = []
+articles_content.flatten.each do |article|
+  company_share_capital << article if article[/(capital social|capital initial)/] && article[/libéré/] && !article[/apport/]
+end
+
+puts company_share_capital
+
+company_form = content[/(SAS|SARL|SA|SCI|EURL|SASU|S.A.S|S.A.RL|S.A|S.C.I|E.U.R.L|S.A.S.U)/]
+
+company_purpose = []
+articles_content.flatten.each do |article|
+  company_purpose << article if article[/objet social est/] || article[/a pour objet/]
+end
+
+
+
+
 
 
 # puts File.read("out.txt").match(/^ARTICLEGKJBKJBV/)
