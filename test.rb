@@ -68,7 +68,14 @@ class Article
   end
 
   def title
-    @title ||= full_article[/ARTICLE\s*[\d]*\s*[\.|-]*[^\n]+/]
+    @title ||= full_article[/ARTICLE\s*[\d]*\s*[-\.]*[^\n]+/]
+  end
+
+  def sub_article
+    number = full_article[/(ARTICLE\s*)([\d]*)\s*[-\.]*/, 2]
+    content
+    # sub_article_title = content[/#{number}[-\.]*\d+\s*[-\.]*[^\n]+/]
+    # @sub_article = full_article[/#{sub_article_title}(.*)/m, 1]
   end
 
   def content
@@ -83,6 +90,10 @@ end
 # articles_number = content.scan(/ARTICLE\s+[\d]+/)
 
 doc = Document.new('statuts_camping.pdf')
+
+File.open("out4.txt", 'w') {|f| f.write("#{doc.content}") }
+
+puts doc.content.inspect
 
 # doc.articles.each do |article|
 #   print article
@@ -99,26 +110,42 @@ doc.articles.map do |article|
   @article_objects << Article.new(article)
 end
 
-@article_objects.each do |article|
-  puts '*'*50
-  puts article.title
-  puts '*'*50
-  puts article.content
-  puts '*'*50
-end
+# @article_objects.each do |article|
+#   puts '*'*50
+#   puts article.title
+#   puts '*'*50
+#   puts article.content
+#   puts '*'*50
+# end
 
 articles_hash = {}
+count = 0
 Article.all.each do |article|
   articles_hash[article.title] = article.content
+  puts '+'*50
+  puts count = count + 1
+  puts '_'*50
+  puts article.title
+  # puts '_'*50
+  # puts article.content
+  # puts '+'*50
 end
 
-company_name = doc.content[/(^.*?(?=société|Société))/m].strip.gsub(/\s{2}+/, "")
+company_name = []
+if doc.content[/(statuts constitutifs)/i]
+  company_name = doc.content[/(?<=DE LA SOCIETE|STATUTS CONSTITUTIFS DE LA SOCIETE).*?(?=société)/im].strip.gsub(/\s{2}+/, "")
+else
+  company_name = doc.content[/(^.*?(?=société|au capital))/im].strip.gsub(/\s{2}+/, "")
+end
+
 company_form = doc.content[/(SAS|SARL|SA|SCI|EURL|SASU|S\.A\.S|S\.A\.R\.L|S\.A|S\.C\.I|E\.U\.R\.L|S\.A\.S\.U)/]
+
 
 company_name_article = ""
 Article.all.each do |article|
-  company_name_article = article.full_article if article.full_article[/(dénomination sociale|DENOMINATION)/]
+  company_name_article = article.full_article if article.full_article[/(dénomination sociale|DENOMINATION|DÉNOMINATION)/]
 end
+
 
 
 
@@ -132,20 +159,21 @@ end
 
 company_head_office = []
 Article.all.each do |article|
-  company_head_office << article.full_article if article.full_article[/siège social est/]
+  company_head_office << article.full_article if article.full_article[/(siège social est|de la société est fixé)/]
 end
+
 
 
 company_share_capital = ""
 Article.all.each do |article|
-  company_share_capital = article.full_article if article.full_article[/(capital social|capital initial)/] && article.full_article[/libéré/] && !article.full_article[/apport/]
+  company_share_capital = article.full_article if article.full_article[/(capital social|capital initial)/] && article.full_article[/divisé/] && !article.full_article[/apport/]
 end
-
 
 company_purpose = []
 Article.all.each do |article|
   company_purpose << article.full_article if article.full_article =~ /objet social est/ || article.full_article =~ /a pour objet/
 end
+
 
   def share_capital
     capital = ""
@@ -171,6 +199,7 @@ Article.all.each do |article|
   company_directors << "Directeur Général" if article.title =~ /directeur général/i
 end
 
+
 # powers_article = []
 
 # company_directors.each do |director|
@@ -182,8 +211,8 @@ end
 power_chunk = {}
 company_directors.each do |director|
   Article.all.each do |article|
-  if article.content =~ /(?<=\.)([^\.]*(?:#{director} ne peut|#{director} ne pourra|#{director} ne pourront|autorisation préalable|sans l'accord)[^\.]*)(?=\.)/i
-    power_chunk[article.title] = article.content[/(?<=\.)([^\.]*(?:#{director} ne peut|#{director} ne pourra|#{director} ne pourront|autorisation préalable|sans l'accord)[^\.]*)(?=\.)/i]
+  if article.content =~ /(?<=\.)([^\.]*(?:#{director} de la société ne peut|#{director} ne pourra|#{director} ne pourront|#{director} ne peuvent)[^\.]*)(?=\.)/i
+    power_chunk[article.title] = article.content[/(?<=\.)([^\.]*(?:#{director} de la société ne peut|#{director} ne pourra|#{director} ne pourront|autorisation préalable|sans l'accord)[^\.]*)(?=\.)/i]
   end
   end
 end
