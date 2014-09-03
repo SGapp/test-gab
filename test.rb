@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'bundler/setup'
-
+require 'pry'
 require 'pdf-reader'
 
 # filename = 'statuts_dariobat'
@@ -48,7 +48,9 @@ class Document
   end
 
   def articles
-    content.scan(/^ARTICLE.*?(?=ARTICLE|TITRE|\z)/m)
+    content.scan(/ARTICLE.*?(?=ARTICLE|\nTITRE|\z)/m).map do |article|
+      Article.new(article)
+    end
   end
 
   private
@@ -68,15 +70,17 @@ class Article
   end
 
   def title
-    @title ||= full_article[/ARTICLE\s*[\d]*\s*[-\.]*[^\n]+/]
+    @title ||= full_article[/ARTICLE\s*[\d]*\s*[-\.]*[^\n\r\t]+/]
   end
 
   def sub_article
+    sub_article = []
     number = full_article[/(ARTICLE\s*)([\d]*)\s*[-\.]*/, 2]
-    content
-    # sub_article_title = content[/#{number}[-\.]*\d+\s*[-\.]*[^\n]+/]
-    # @sub_article = full_article[/#{sub_article_title}(.*)/m, 1]
+    full_article.scan(/^#{number}.*?(?=#{number}|#{number.to_i+1}|\z)/im).map do |sub_article|
+      SubArticle.new(sub_article)
+    end
   end
+
 
   def content
     @content ||= full_article[/#{Regexp.escape title}(.*)/m, 1]
@@ -87,13 +91,23 @@ class Article
   end
 end
 
+class SubArticle
+  attr_reader :sub_article
+
+  def initialize(sub_article)
+    @sub_article = sub_article
+  end
+
+end
+
+
 # articles_number = content.scan(/ARTICLE\s+[\d]+/)
 
 doc = Document.new('statuts_camping.pdf')
 
 File.open("out4.txt", 'w') {|f| f.write("#{doc.content}") }
 
-puts doc.content.inspect
+# puts doc.content.inspect
 
 # doc.articles.each do |article|
 #   print article
@@ -105,31 +119,26 @@ puts doc.content.inspect
 
 # articles_content = content.scan(/(^ARTICLE.*?(?=ARTICLE|TITRE|\z))/m)
 
-@article_objects = []
-doc.articles.map do |article|
-  @article_objects << Article.new(article)
-end
-
-# @article_objects.each do |article|
-#   puts '*'*50
-#   puts article.title
-#   puts '*'*50
-#   puts article.content
-#   puts '*'*50
+# @article_objects = []
+# doc.articles.map do |article|
+#   @article_objects << Article.new(article)
 # end
 
-articles_hash = {}
-count = 0
+
+doc.articles
+
 Article.all.each do |article|
-  articles_hash[article.title] = article.content
-  puts '+'*50
-  puts count = count + 1
-  puts '_'*50
-  puts article.title
-  # puts '_'*50
-  # puts article.content
-  # puts '+'*50
+  puts '*'*50
+  print article.sub_article
+  puts '*'*50
 end
+
+
+# @sub_articles.each do |sub_article|
+#   puts sub_article.title
+# end
+
+
 
 company_name = []
 if doc.content[/(statuts constitutifs)/i]
@@ -138,15 +147,16 @@ else
   company_name = doc.content[/(^.*?(?=société|au capital))/im].strip.gsub(/\s{2}+/, "")
 end
 
+
+
 company_form = doc.content[/(SAS|SARL|SA|SCI|EURL|SASU|S\.A\.S|S\.A\.R\.L|S\.A|S\.C\.I|E\.U\.R\.L|S\.A\.S\.U)/]
+
 
 
 company_name_article = ""
 Article.all.each do |article|
   company_name_article = article.full_article if article.full_article[/(dénomination sociale|DENOMINATION|DÉNOMINATION)/]
 end
-
-
 
 
   def designation
@@ -161,7 +171,6 @@ company_head_office = []
 Article.all.each do |article|
   company_head_office << article.full_article if article.full_article[/(siège social est|de la société est fixé)/]
 end
-
 
 
 company_share_capital = ""
@@ -211,8 +220,8 @@ end
 power_chunk = {}
 company_directors.each do |director|
   Article.all.each do |article|
-  if article.content =~ /(?<=\.)([^\.]*(?:#{director} de la société ne peut|#{director} ne pourra|#{director} ne pourront|#{director} ne peuvent)[^\.]*)(?=\.)/i
-    power_chunk[article.title] = article.content[/(?<=\.)([^\.]*(?:#{director} de la société ne peut|#{director} ne pourra|#{director} ne pourront|autorisation préalable|sans l'accord)[^\.]*)(?=\.)/i]
+  if article.content =~ /(?<=\.)([^\.]*(?:#{director} ?(de la société) ne peut|#{director} ?(de la société) ne pourra|#{director} ?(de la société) ne pourront|#{director} ?(de la société) ne peuvent)[^\.]*)(?=\.)/i
+    power_chunk[article.title] = article.content[/(?<=\.)([^\.]*(?:#{director} ?(de la société) ne peut|#{director} ?(de la société) ne pourra|#{director} ?(de la société) ne pourront)[^\.]*)(?=\.)/i]
   end
   end
 end
@@ -233,25 +242,31 @@ Article.all.each do |article|
   end
 end
 
+
 company_lenght = []
 
 Article.all.each do |article|
-  company_lenght << article.full_article if article.full_article =~ /(durée|duree)/i && article.full_article =~ /(est fixée)/i && article.full_article =~ /(immatriculation)/i
+  company_lenght << article.full_article if article.full_article =~ /(la durée de la société est fixée|a une durée de)/
 end
 
 company_social_decisions = []
 
 Article.all.each do |article|
-  company_social_decisions << article.full_article if article.title =~ /(assemblée générale|décisions collectives|décisions des associés|décisions d'associés)/i
+  company_social_decisions << article.full_article if article.title =~ /(assembl[ée]e gén[ée]rale|d[ée]cisions collectives|d[ée]cisions des associ[ée]s|d[ée]cisions d'associ[ée]s|d[ée]cisions)/i
 end
 
-agrement = []
+contribution = []
 Article.all.each do |article|
-  agrement << article.full_article if article.title =~ /agrément/i && article.full_article =~ /demande d'agrément/i
+    contribution = article.full_article if article.title =~ /(formation du capital|apports|r[ée]partition du capital)/i
 end
 
-print agrement
-# print company_social_decisions
+
+agrement = ""
+Article.all.each do |article|
+  agrement = article.full_article if article.title =~ /agrément/i && article.full_article =~ /demande d'agrément/i
+end
+
+
 
 
 
