@@ -82,7 +82,7 @@ end
 
 # articles_number = content.scan(/ARTICLE\s+[\d]+/)
 
-doc = Document.new('statuts_sas_ercisol.pdf')
+doc = Document.new('statuts_camping.pdf')
 
 # doc.articles.each do |article|
 #   print article
@@ -94,8 +94,17 @@ doc = Document.new('statuts_sas_ercisol.pdf')
 
 # articles_content = content.scan(/(^ARTICLE.*?(?=ARTICLE|TITRE|\z))/m)
 
+@article_objects = []
 doc.articles.map do |article|
-  Article.new(article)
+  @article_objects << Article.new(article)
+end
+
+@article_objects.each do |article|
+  puts '*'*50
+  puts article.title
+  puts '*'*50
+  puts article.content
+  puts '*'*50
 end
 
 articles_hash = {}
@@ -106,10 +115,20 @@ end
 company_name = doc.content[/(^.*?(?=société|Société))/m].strip.gsub(/\s{2}+/, "")
 company_form = doc.content[/(SAS|SARL|SA|SCI|EURL|SASU|S\.A\.S|S\.A\.R\.L|S\.A|S\.C\.I|E\.U\.R\.L|S\.A\.S\.U)/]
 
-company_name_article = []
+company_name_article = ""
 Article.all.each do |article|
-  company_name_article << article.full_article if article.full_article[/(dénomination sociale|DENOMINATION)/]
+  company_name_article = article.full_article if article.full_article[/(dénomination sociale|DENOMINATION)/]
 end
+
+
+
+  def designation
+    company_designation = ""
+    @article_objects.each do |article|
+      company_designation = article.full_article if article.full_article[/(dénomination sociale|DENOMINATION)/]
+    end
+    company_designation
+  end
 
 company_head_office = []
 Article.all.each do |article|
@@ -117,15 +136,25 @@ Article.all.each do |article|
 end
 
 
-company_share_capital = []
+company_share_capital = ""
 Article.all.each do |article|
-  company_share_capital << article.full_article if article.full_article[/(capital social|capital initial)/] && article.full_article[/libéré/] && !article.full_article[/apport/]
+  company_share_capital = article.full_article if article.full_article[/(capital social|capital initial)/] && article.full_article[/libéré/] && !article.full_article[/apport/]
 end
+
 
 company_purpose = []
 Article.all.each do |article|
   company_purpose << article.full_article if article.full_article =~ /objet social est/ || article.full_article =~ /a pour objet/
 end
+
+  def share_capital
+    capital = ""
+    @article_objects.each do |article|
+      capital = article.full_article if article.full_article =~ /(capital social|capital initial)/ && article.full_article =~ /libéré/ && !article.full_article =~ /apport/
+    end
+    capital
+  end
+
 
 company_directors = []
 Article.all.each do |article|
@@ -187,7 +216,13 @@ Article.all.each do |article|
   company_social_decisions << article.full_article if article.title =~ /(assemblée générale|décisions collectives|décisions des associés|décisions d'associés)/i
 end
 
-print company_social_decisions
+agrement = []
+Article.all.each do |article|
+  agrement << article.full_article if article.title =~ /agrément/i && article.full_article =~ /demande d'agrément/i
+end
+
+print agrement
+# print company_social_decisions
 
 
 
