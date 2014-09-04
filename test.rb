@@ -70,13 +70,13 @@ class Article
   end
 
   def title
-    @title ||= full_article[/ARTICLE\s*[\d]*\s*[-\.]*[^\n\r\t]+/]
+    @title ||= full_article[/ARTICLE\s*[\d]*\s*[-•\.]*[^\n\r\t]+/]
   end
 
   def sub_articles
     unless @sub_articles
       @sub_articles = []
-      number = full_article[/(ARTICLE\s*)([\d]*)\s*[-\.]*/, 2]
+      number = full_article[/(ARTICLE\s*)([\d]*)\s*[-•\.]*/, 2]
       puts 'CALLED TOO MANY TIMES'
 
       full_article.scan(/^#{number}.*?(?=#{number}|#{number.to_i+1}|\z)/im).each do |sub_article|
@@ -113,7 +113,11 @@ end
 
 # articles_number = content.scan(/ARTICLE\s+[\d]+/)
 
-doc = Document.new('statuts_camping.pdf')
+doc = Document.new('statuts_dariobat_page_3.pdf')
+
+puts "*"*50
+print doc
+puts "*"*50
 
 File.open("out4.txt", 'w') {|f| f.write("#{doc.content}") }
 
@@ -134,7 +138,7 @@ File.open("out4.txt", 'w') {|f| f.write("#{doc.content}") }
 #   @article_objects << Article.new(article)
 # end
 
-doc.articles
+# doc.articles
 
 
 
@@ -148,8 +152,8 @@ doc.articles
 #   end
 # end
 
-Article.all[0].sub_articles
-Article.all[0].sub_articles
+# Article.all[0].sub_articles
+# Article.all[0].sub_articles
 
 
 # @sub_articles.each do |sub_article|
@@ -158,125 +162,125 @@ Article.all[0].sub_articles
 
 
 
-company_name = []
-if doc.content[/(statuts constitutifs)/i]
-  company_name = doc.content[/(?<=DE LA SOCIETE|STATUTS CONSTITUTIFS DE LA SOCIETE).*?(?=société)/im].strip.gsub(/\s{2}+/, "")
-else
-  company_name = doc.content[/(^.*?(?=société|au capital))/im].strip.gsub(/\s{2}+/, "")
-end
+# company_name = []
+# if doc.content[/(statuts constitutifs)/i]
+#   company_name = doc.content[/(?<=DE LA SOCIETE|STATUTS CONSTITUTIFS DE LA SOCIETE).*?(?=société)/im].strip.gsub(/\s{2}+/, "")
+# else
+#   company_name = doc.content[/(^.*?(?=société|au capital))/im].strip.gsub(/\s{2}+/, "")
+# end
 
 
 
-company_form = doc.content[/(SAS|SARL|SA|SCI|EURL|SASU|S\.A\.S|S\.A\.R\.L|S\.A|S\.C\.I|E\.U\.R\.L|S\.A\.S\.U)/]
+# company_form = doc.content[/(SAS|SARL|SA|SCI|EURL|SASU|S\.A\.S|S\.A\.R\.L|S\.A|S\.C\.I|E\.U\.R\.L|S\.A\.S\.U)/]
 
 
 
-company_name_article = ""
-Article.all.each do |article|
-  company_name_article = article.full_article if article.full_article[/(dénomination sociale|DENOMINATION|DÉNOMINATION)/]
-end
+# company_name_article = ""
+# Article.all.each do |article|
+#   company_name_article = article.full_article if article.full_article[/(dénomination sociale|DENOMINATION|DÉNOMINATION)/]
+# end
 
 
-  def designation
-    company_designation = ""
-    @article_objects.each do |article|
-      company_designation = article.full_article if article.full_article[/(dénomination sociale|DENOMINATION)/]
-    end
-    company_designation
-  end
+#   def designation
+#     company_designation = ""
+#     @article_objects.each do |article|
+#       company_designation = article.full_article if article.full_article[/(dénomination sociale|DENOMINATION)/]
+#     end
+#     company_designation
+#   end
 
-company_head_office = []
-Article.all.each do |article|
-  company_head_office << article.full_article if article.full_article[/(siège social est|de la société est fixé)/]
-end
-
-
-company_share_capital = ""
-Article.all.each do |article|
-  company_share_capital = article.full_article if article.full_article[/(capital social|capital initial)/] && article.full_article[/divisé/] && !article.full_article[/apport/]
-end
-
-company_purpose = []
-Article.all.each do |article|
-  company_purpose << article.full_article if article.full_article =~ /objet social est/ || article.full_article =~ /a pour objet/
-end
+# company_head_office = []
+# Article.all.each do |article|
+#   company_head_office << article.full_article if article.full_article[/(siège social est|de la société est fixé)/]
+# end
 
 
-  def share_capital
-    capital = ""
-    @article_objects.each do |article|
-      capital = article.full_article if article.full_article =~ /(capital social|capital initial)/ && article.full_article =~ /libéré/ && !article.full_article =~ /apport/
-    end
-    capital
-  end
+# company_share_capital = ""
+# Article.all.each do |article|
+#   company_share_capital = article.full_article if article.full_article[/(capital social|capital initial)/] && article.full_article[/divisé/] && !article.full_article[/apport/]
+# end
+
+# company_purpose = []
+# Article.all.each do |article|
+#   company_purpose << article.full_article if article.full_article =~ /objet social est/ || article.full_article =~ /a pour objet/
+# end
 
 
-company_directors = []
-Article.all.each do |article|
-  if article.title =~ /président directeur général/i
-    company_directors << "Président Directeur Général"
-  elsif article.title =~ /président/i
-    company_directors << "Président"
-  elsif article.title =~ /gérant/i
-    company_directors << "Gérant"
-  elsif article.title =~ /directoire/i
-    company_directors << "Directoire"
-  end
-  company_directors << "Directeur Général Délégué" if article.title =~ /directeur général délégué/i
-  company_directors << "Directeur Général" if article.title =~ /directeur général/i
-end
+#   def share_capital
+#     capital = ""
+#     @article_objects.each do |article|
+#       capital = article.full_article if article.full_article =~ /(capital social|capital initial)/ && article.full_article =~ /libéré/ && !article.full_article =~ /apport/
+#     end
+#     capital
+#   end
 
 
-# powers_article = []
+# company_directors = []
+# Article.all.each do |article|
+#   if article.title =~ /président directeur général/i
+#     company_directors << "Président Directeur Général"
+#   elsif article.title =~ /président/i
+#     company_directors << "Président"
+#   elsif article.title =~ /gérant/i
+#     company_directors << "Gérant"
+#   elsif article.title =~ /directoire/i
+#     company_directors << "Directoire"
+#   end
+#   company_directors << "Directeur Général Délégué" if article.title =~ /directeur général délégué/i
+#   company_directors << "Directeur Général" if article.title =~ /directeur général/i
+# end
 
+
+# # powers_article = []
+
+# # company_directors.each do |director|
+# #   articles_content.flatten.each do |article|
+# #     powers_article << article if article =~ /(#{director} ne peut|#{director} ne pourra|#{director} ne pourront|autorisation préalable|sans l'accord)/i
+# #   end
+# # end
+
+# power_chunk = {}
 # company_directors.each do |director|
-#   articles_content.flatten.each do |article|
-#     powers_article << article if article =~ /(#{director} ne peut|#{director} ne pourra|#{director} ne pourront|autorisation préalable|sans l'accord)/i
+#   Article.all.each do |article|
+#   if article.content =~ /(?<=\.)([^\.]*(?:#{director} ?(de la société) ne peut|#{director} ?(de la société) ne pourra|#{director} ?(de la société) ne pourront|#{director} ?(de la société) ne peuvent)[^\.]*)(?=\.)/i
+#     power_chunk[article.title] = article.content[/(?<=\.)([^\.]*(?:#{director} ?(de la société) ne peut|#{director} ?(de la société) ne pourra|#{director} ?(de la société) ne pourront)[^\.]*)(?=\.)/i]
+#   end
 #   end
 # end
 
-power_chunk = {}
-company_directors.each do |director|
-  Article.all.each do |article|
-  if article.content =~ /(?<=\.)([^\.]*(?:#{director} ?(de la société) ne peut|#{director} ?(de la société) ne pourra|#{director} ?(de la société) ne pourront|#{director} ?(de la société) ne peuvent)[^\.]*)(?=\.)/i
-    power_chunk[article.title] = article.content[/(?<=\.)([^\.]*(?:#{director} ?(de la société) ne peut|#{director} ?(de la société) ne pourra|#{director} ?(de la société) ne pourront)[^\.]*)(?=\.)/i]
-  end
-  end
-end
-
-company_corporate_bodies = []
-Article.all.each do |article|
-  if article.title =~ /comité/i
-    company_corporate_bodies << article.title[/(ARTICLE\s+[\d]+.)(.+)/, 2]
-    break
-  end
-  if article.title =~ /commission/i
-    company_corporate_bodies << article.title[/(ARTICLE\s+[\d]+.)(.+)/, 2]
-    break
-  end
-  if article.title =~ /direction/i
-    company_corporate_bodies << article.title[/(ARTICLE\s+[\d]+.)(.+)/, 2]
-    break
-  end
-end
+# company_corporate_bodies = []
+# Article.all.each do |article|
+#   if article.title =~ /comité/i
+#     company_corporate_bodies << article.title[/(ARTICLE\s+[\d]+.)(.+)/, 2]
+#     break
+#   end
+#   if article.title =~ /commission/i
+#     company_corporate_bodies << article.title[/(ARTICLE\s+[\d]+.)(.+)/, 2]
+#     break
+#   end
+#   if article.title =~ /direction/i
+#     company_corporate_bodies << article.title[/(ARTICLE\s+[\d]+.)(.+)/, 2]
+#     break
+#   end
+# end
 
 
-company_lenght = []
+# company_lenght = []
 
-Article.all.each do |article|
-  company_lenght << article.full_article if article.full_article =~ /(la durée de la société est fixée|a une durée de)/
-end
+# Article.all.each do |article|
+#   company_lenght << article.full_article if article.full_article =~ /(la durée de la société est fixée|a une durée de)/
+# end
 
-company_social_decisions = []
+# company_social_decisions = []
 
-Article.all.each do |article|
-  company_social_decisions << article.full_article if article.title =~ /(assembl[ée]e gén[ée]rale|d[ée]cisions collectives|d[ée]cisions des associ[ée]s|d[ée]cisions d'associ[ée]s|d[ée]cisions)/i
-end
+# Article.all.each do |article|
+#   company_social_decisions << article.full_article if article.title =~ /(assembl[ée]e gén[ée]rale|d[ée]cisions collectives|d[ée]cisions des associ[ée]s|d[ée]cisions d'associ[ée]s|d[ée]cisions)/i
+# end
 
-contribution = []
-Article.all.each do |article|
-    contribution = article.full_article if article.title =~ /(formation du capital|apports|r[ée]partition du capital)/i
-end
+# contribution = []
+# Article.all.each do |article|
+#     contribution = article.full_article if article.title =~ /(formation du capital|apports|r[ée]partition du capital)/i
+# end
 
 
 # approval = ""
