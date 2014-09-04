@@ -73,12 +73,18 @@ class Article
     @title ||= full_article[/ARTICLE\s*[\d]*\s*[-\.]*[^\n\r\t]+/]
   end
 
-  def sub_article
-    sub_article = []
-    number = full_article[/(ARTICLE\s*)([\d]*)\s*[-\.]*/, 2]
-    full_article.scan(/^#{number}.*?(?=#{number}|#{number.to_i+1}|\z)/im).map do |sub_article|
-      SubArticle.new(sub_article)
+  def sub_articles
+    unless @sub_articles
+      @sub_articles = []
+      number = full_article[/(ARTICLE\s*)([\d]*)\s*[-\.]*/, 2]
+      puts 'CALLED TOO MANY TIMES'
+
+      full_article.scan(/^#{number}.*?(?=#{number}|#{number.to_i+1}|\z)/im).each do |sub_article|
+        @sub_articles << SubArticle.new(sub_article)
+      end
     end
+
+    @sub_articles
   end
 
 
@@ -96,6 +102,10 @@ class SubArticle
 
   def initialize(sub_article)
     @sub_article = sub_article
+  end
+
+  def content
+    @sub_article
   end
 
 end
@@ -124,14 +134,22 @@ File.open("out4.txt", 'w') {|f| f.write("#{doc.content}") }
 #   @article_objects << Article.new(article)
 # end
 
-
 doc.articles
 
-Article.all.each do |article|
-  puts '*'*50
-  print article.sub_article
-  puts '*'*50
-end
+
+
+# Article.all.each do |article|
+#   if article.sub_articles.count > 0
+#     puts '*'*50
+#     article.sub_articles.each do |sub_article|
+#       puts sub_article.content
+#     end
+#     puts '*'*50
+#   end
+# end
+
+Article.all[0].sub_articles
+Article.all[0].sub_articles
 
 
 # @sub_articles.each do |sub_article|
@@ -261,10 +279,17 @@ Article.all.each do |article|
 end
 
 
-agrement = ""
-Article.all.each do |article|
-  agrement = article.full_article if article.title =~ /agrément/i && article.full_article =~ /demande d'agrément/i
-end
+# approval = ""
+# Article.all.each do |article|
+#   approval = article.full_article if article.title =~ /agrément/i || article.content =~ /demande d'agrément/i
+#   if article.sub_articles.count > 0
+#     article.sub_articles.each do |sub_article|
+#       approval = sub_article.content if sub_article.content =~ /agrément/i && sub_article.content =~ /demande d'agrément/
+#     end
+#   end
+# end
+
+
 
 
 
