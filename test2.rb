@@ -17,7 +17,7 @@ class Document
   end
 
   def articles
-    content.scan(/ARTICLE.*?(?=ARTICLE|\.\n{,15}.{,15}TITRE|\z)/m).map do |article|
+    content.scan(/ARTICLE.*?(?=ARTICLE|\.\n*\s*TITRE|\z)/m).map do |article|
       Article.new(article)
     end
   end
@@ -92,28 +92,28 @@ articles.each do |article|
   end
 end
 
-print approval.inspect
+puts approval
 
-    corporate_bodies = []
-    articles.each do |article|
-      if article.title =~ /comité/i
-        corporate_bodies << article.title
-        break
-      end
-      if article.title =~ /commission/i
-        corporate_bodies << article.title
-        break
-      end
-      if article.title =~ /direction/i
-        corporate_bodies << article.title
-        break
-      end
-    end
-    if corporate_bodies == []
-      puts "Les statuts ne comportent d'autres organes sociaux."
-    else
-      puts corporate_bodies.join(" ,")
-    end
+    # corporate_bodies = []
+    # articles.each do |article|
+    #   if article.title =~ /comité/i
+    #     corporate_bodies << article.title
+    #     break
+    #   end
+    #   if article.title =~ /commission/i
+    #     corporate_bodies << article.title
+    #     break
+    #   end
+    #   if article.title =~ /direction/i
+    #     corporate_bodies << article.title
+    #     break
+    #   end
+    # end
+    # if corporate_bodies == []
+    #   puts "Les statuts ne comportent d'autres organes sociaux."
+    # else
+    #   puts corporate_bodies.join(" ,")
+    # end
 
 
 
